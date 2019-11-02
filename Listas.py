@@ -19,9 +19,23 @@ class AplicacionDeListasEnlazadas:
     def add_at_front(self, data):
         self.head = node(data=data, next=self.head)
 
-    # Método para verificar si la estructura de datos esta vacia
-    def is_empty(self):
-        return self.head == None
+    # Método para agregar un nuevo nodo entre dos ya existentes
+    def add_between(self, posicion, elemento):
+        curr = self.head
+        count = 1
+        nodoPrevio = None
+
+        while count != posicion:
+            nodoPrevio = curr
+            curr = curr.next
+            count += 1
+            print(count)
+
+        if nodoPrevio is None:
+            self.head = curr.next
+
+        elif curr:
+            nodoPrevio.next = node(data=elemento, next=curr)
 
     # Método para agregar elementos al final de la linked list
     def add_at_end(self, data):
@@ -33,26 +47,10 @@ class AplicacionDeListasEnlazadas:
             curr = curr.next
         curr.next = node(data=data)
 
-    # Método para eliminar nodos
-    def delete_node(self, key):
-        curr = self.head
-        prev = None
-        while curr and curr.data != key:
-            prev = curr
-            curr = curr.next
-        if prev is None:
-            self.head = curr.next
-        elif curr:
-            prev.next = curr.next
-            curr.next = None
-
-    # Método para obtener el ultimo nodo
-    def get_last_node(self):
-        temp = self.head
-        while (temp.next is not None):
-            temp = temp.next
-        return temp.data
-
+    # Método para verificar si la estructura de datos esta vacia
+    def is_empty(self):
+        return self.head == None
+    
     # Método para imprimir la lista de nodos
     def print_list(self):
         node = self.head
