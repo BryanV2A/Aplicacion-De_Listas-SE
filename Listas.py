@@ -69,5 +69,5 @@ s.add_at_front(-5)  # Agregamos un elemento al frente del nodo
 s.add_at_end(8)  # Agregamos un elemento al final del nodo
 s.add_at_front(-9)  # Agregamos otro elemento al frente del nodo
 
-s.add_between(2, 3)  # Insertamos un nuevo elemento (3) en la posicion (2)
+s.add_between(2, -3)  # Insertamos un nuevo elemento (3) en la posicion (2)
 s.print_list()  # Imprimimos la lista de nodos
