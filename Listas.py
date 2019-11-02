@@ -25,11 +25,12 @@ class AplicacionDeListasEnlazadas:
         count = 1
         nodoPrevio = None
 
+        #if elemento > 0:
+
         while count != posicion:
             nodoPrevio = curr
             curr = curr.next
             count += 1
-            print(count)
 
         if nodoPrevio is None:
             self.head = curr.next
@@ -50,12 +51,15 @@ class AplicacionDeListasEnlazadas:
     # Método para verificar si la estructura de datos esta vacia
     def is_empty(self):
         return self.head == None
-    
+
     # Método para imprimir la lista de nodos
     def print_list(self):
+        cont = 0
         node = self.head
+
         while node != None:
-            print(node.data, end=" => ")
+            cont += 1
+            print('Posicion',cont,':' , node.data, end=" => ")
             node = node.next
 
 
@@ -64,4 +68,5 @@ s.add_at_front(5)  # Agregamos un elemento al frente del nodo
 s.add_at_end(8)  # Agregamos un elemento al final del nodo
 s.add_at_front(9)  # Agregamos otro elemento al frente del nodo
 
+s.add_between(2, 3)  # Insertamos un nuevo elemento (3) en la posicion (2)
 s.print_list()  # Imprimimos la lista de nodos
